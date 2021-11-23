@@ -113,12 +113,12 @@ fi
 typeset -A menu
 
 # Menu with keys/commands
-
 menu=(
+  [ Lock]="~/.config/i3/scripts/blur-lock.sh"
   [  Shutdown]="systemctl poweroff"
   [ Reboot]="systemctl reboot"
+  [❄ Hibernate]="systemctl hibernate"
   [ Suspend]="systemctl suspend"
-  [ Lock]="~/.config/i3/scripts/blur-lock.sh"
   [ Logout]="i3-msg exit"
   [ Cancel]=""
 )

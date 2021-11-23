@@ -250,9 +250,9 @@ bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:"
+set $ws3 "3:"
 set $ws4 "4:"
-set $ws5 "5:"
+set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7"
 set $ws8 "8"
@@ -271,18 +271,18 @@ set $ws10 "10"
 # bind program to workspace and focus to them on startup:
 assign [class="(?i)firefox"] $ws1
 assign [class="Xfce4-terminal"] $ws2
-assign [class="(?i)most"] $ws3
+assign [class="Spotify"] $ws3
 assign [class="Dolphin"] $ws4
-assign [class="Spotify"] $ws5
+assign [class="(?i)most"] $ws5
 assign [class="Thunderbird"] $ws6
 assign [class="TelegramDesktop"] $ws7
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=(?i)firefox] focus
 for_window [class="Xfce4-terminal"] move to workspace $ws2
-for_window [class="(?i)most"] move to workspace $ws3
+for_window [class="Spotify"] move to workspace $ws3
 for_window [class="Dolphin"] move to workspace $ws4
-for_window [class="Spotify"] move to workspace $ws5
+for_window [class="(?i)most"] move to workspace $ws5
 for_window [class=Thunderbird] move to workspace $ws6
 for_window [class=TelegramDesktop] move to workspace $ws7
 #for_window [class=(?i)firefox] focus
@@ -337,7 +337,7 @@ exec --no-startup-id pgrep redshift-gtk &> /dev/null || redshift-gtk &> /dev/nul
 
 # Autostart apps as you like
 exec --no-startup-id firefox-developer-edition
-exec --no-startup-id mattermost-desktop
+#exec --no-startup-id mattermost-desktop
 exec --no-startup-id sleep 2 && xfce4-terminal -e "glances --percpu"
 exec --no-startup-id spotify
 
