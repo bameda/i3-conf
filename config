@@ -127,7 +127,8 @@ bindsym $mod+Shift+10    move container to workspace  $ws10
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+#bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+c kill
@@ -331,22 +332,26 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
+# Kensington Expert Trackball Setup
+# (https://github.com/bameda/kensington-expert-trackball-linux-config)
+exec_always --no-startup-id ~/.local/bin/kensington_expert_setup.sh
+
 # redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id pgrep redshift-gtk &> /dev/null || redshift-gtk &> /dev/null &
 
+# Proton VPN
+exec_always --no-startup-id protonvpn
+
 # Autostart apps as you like
 exec --no-startup-id firefox-developer-edition
 #exec --no-startup-id mattermost-desktop
-exec --no-startup-id sleep 2 && xfce4-terminal -e "glances --percpu"
+#exec --no-startup-id sleep 2 && xfce4-terminal -e "glances --percpu"
+exec --no-startup-id sleep 2 && kitty
 exec --no-startup-id spotify
 
 # Arandr
 #exec --no-startup-id sleep 4 && /home/bameda/.screenlayout/bameda_home_marmolejo.sh
-
-#exec --no-startup-id sleep 2 && xfce4-terminal
-#exec --no-startup-id firefox
-#exec --no-startup-id sleep 3 && thunar
 
 # set floating (nontiling)for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
@@ -460,3 +465,9 @@ bindsym $mod+t exec rofi -show window -display-window "Window : " -line-padding 
 bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
                 -lines 10 -padding 50 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+
+
+#####################################
+# Extra scripts and customizations  #
+#####################################
+
