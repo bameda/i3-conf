@@ -128,7 +128,8 @@ bindsym $mod+Shift+10    move container to workspace  $ws10
 
 # start a terminal
 #bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+Return exec kitty
+#bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+c kill
@@ -271,7 +272,10 @@ set $ws10 "10"
 
 # bind program to workspace and focus to them on startup:
 assign [class="(?i)firefox"] $ws1
-assign [class="Xfce4-terminal"] $ws2
+#assign [class="Xfce4-terminal"] $ws2
+#assign [class="kitty"] $ws2
+assign [class="ghostty"] $ws2
+assign [class="Ghostty"] $ws2
 assign [class="Spotify"] $ws3
 assign [class="Dolphin"] $ws4
 assign [class="(?i)most"] $ws5
@@ -280,7 +284,10 @@ assign [class="TelegramDesktop"] $ws7
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=(?i)firefox] focus
-for_window [class="Xfce4-terminal"] move to workspace $ws2
+#for_window [class="Xfce4-terminal"] move to workspace $ws2
+#for_window [class="kitty"] move to workspace $ws2
+for_window [class="ghostty"] move to workspace $ws2
+for_window [class="Ghostty"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws3
 for_window [class="Dolphin"] move to workspace $ws4
 for_window [class="(?i)most"] move to workspace $ws5
@@ -347,7 +354,8 @@ exec_always --no-startup-id protonvpn
 exec --no-startup-id firefox-developer-edition
 #exec --no-startup-id mattermost-desktop
 #exec --no-startup-id sleep 2 && xfce4-terminal -e "glances --percpu"
-exec --no-startup-id sleep 2 && kitty
+#exec --no-startup-id sleep 2 && kitty
+exec --no-startup-id sleep 2 && ghostty
 exec --no-startup-id spotify
 
 # Arandr
@@ -359,13 +367,15 @@ for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 
 #set floating (nontiling) for special apps
-for_window [class="Xsane" instance="xsane"] floating enable
-for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="Xsane"] floating enable
+for_window [class="pavucontrol"] floating enable resize set 900 900
+for_window [class="qt5ct"] floating enable
+for_window [class="Blueberry.py"] floating enable
+for_window [class="Bluetooth-sendto"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [title="^Android Emulator"] floating enable
+for_window [class="spectacle"] floating enable
+for_window [class="vlc"] floating enable
 
 
 ######################################
